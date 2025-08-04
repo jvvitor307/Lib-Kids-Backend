@@ -35,7 +35,7 @@ class Book(Base):
     title = Column(String(200), nullable=False)
     author = Column(String(100), nullable=False)
     photo_base64 = Column(String, nullable=True)
-    isbn = Column(String(20), unique=True, nullable=False)
+    isbn = Column(String(20), unique=True, nullable=True)
 
     available_copies = Column(Integer, default=1)
     total_copies = Column(Integer, default=1)
