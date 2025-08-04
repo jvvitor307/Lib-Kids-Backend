@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  db_biblioteca: # Nome do serviço único
+    image: postgres:14-alpine
+    container_name: biblioteca_db_container # Nome do container único
+    restart: always
+    env_file: .env
+    ports:
+      - "${POSTGRES_PORT}:5432" # Usa a variável do .env para a porta do HOST
+    volumes:
+      - biblioteca_postgres_data:/var/lib/postgresql/data/
+
+volumes:
+  biblioteca_postgres_data: # Volume de dados único
